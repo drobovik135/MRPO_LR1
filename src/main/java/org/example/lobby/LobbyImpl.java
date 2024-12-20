@@ -17,15 +17,15 @@ public class LobbyImpl implements Lobby {
         return null;
     }
 
-    public LobbyImpl() {
-        this.scan = new Scanner(System.in);
-    }
-
-    public void gameSelect(){
+    private void gameSelect(){
         System.out.println("Pick the game: 1 - NokGame");
         Integer select = scan.nextInt();
         Game game = selector(select);
         game.start();
+    }
+
+    public LobbyImpl() {
+        this.scan = new Scanner(System.in);
     }
 
     @Override
@@ -33,7 +33,13 @@ public class LobbyImpl implements Lobby {
         System.out.println("Welcome to the Brain Games! May I have your name?");
         name = scan.nextLine();
         System.out.printf("Hello, %s!", name);
-        gameSelect();
+        body();
+    }
 
+    @Override
+    public void body() {
+        while(true){
+            gameSelect();
+        }
     }
 }
