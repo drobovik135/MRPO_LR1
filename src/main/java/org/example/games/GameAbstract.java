@@ -4,17 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class GameAbstract implements Game{
-    protected ArrayList<Integer> numbers;
     protected Integer answer;
     protected String questReplica;
+    protected String numerString;
 
     protected void printQuest(){
         System.out.println(questReplica);
-        System.out.print("Question: ");
-        for (Integer number : numbers) {
-            System.out.print(number + " ");
-        }
-        System.out.println();
+        System.out.println("Question: "+numerString);
         System.out.print("Answer: ");
     }
 
